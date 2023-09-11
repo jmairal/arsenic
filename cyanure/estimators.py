@@ -232,6 +232,9 @@ class ERM(BaseEstimator, ABC):
         fista_restart (int): default=50
             Restart strategy for fista (useful for computing regularization path)
 
+        multi_class (string): default="auto"
+            Determine the comportment of the instance in case of multivariate problem (for classification)
+
         """
         self.loss = loss
         if loss == 'squared_hinge':
@@ -787,6 +790,17 @@ class Classifier(ClassifierAbstraction):
     b is a k-dimensional vector representing an unregularized intercept
     (which is optional).
 
+    In the case of binary classification:
+    :math:`w` is a p-dimensional vector representing model parameters, 
+    and b is an optional unregularized intercept. We expect binary labels in {-1,+1}.
+
+    In a multivariate scenario, if you set multi_class parameter to "multinomial" 
+    or if multi_class="auto" and loss="logistic". 
+    The loss will automatically be changed to "multiclass-logistic".
+    If you have a multivariate problem and are not in one of the previous configuration, 
+    a one-vs-all strategy will be used.
+
+
     Parameters
     ----------
     loss: string, default='square'
@@ -918,6 +932,9 @@ class Classifier(ClassifierAbstraction):
 
     fista_restart (int): default=50
         Restart strategy for fista (useful for computing regularization path)
+    
+    multi_class (string): default="auto"
+        Determine the comportment of the instance in case of multivariate problem
 
     """
 
