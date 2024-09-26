@@ -290,10 +290,10 @@ class ERM(BaseEstimator, ABC):
             if len(np.unique(labels)) != 2:
                 self._binary_problem = False
 
-                loss = "multiclass-logistic"
-                logger.info(
-                    "Loss has been set to multiclass-logistic because "
-                    "the multiclass parameter is set to multinomial!")
+            loss = "multiclass-logistic"
+            logger.info(
+                "Loss has been set to multiclass-logistic because "
+                "the multiclass parameter is set to multinomial!")
 
         if loss is None:
             loss = self.loss
