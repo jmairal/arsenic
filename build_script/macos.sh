@@ -24,7 +24,7 @@ if [[ "$RUNNER_OS" == "macOS" ]]; then
         export MACOSX_DEPLOYMENT_TARGET=12.0
 
         OPENMP_URL="https://anaconda.org/conda-forge/llvm-openmp/11.1.0/download/osx-arm64/llvm-openmp-11.1.0-hf3c4609_1.tar.bz2"
-        OPENBLAS_URL="https://anaconda.org/conda-forge/libopenblas/0.3.21/download/osx-arm64/libopenblas-0.3.21-openmp_hc731615_3.tar.bz2"
+        OPENBLAS_URL="https://anaconda.org/anaconda/openblas-devel/0.3.21/download/osx-arm64/openblas-devel-0.3.21-hca03da5_0.tar.bz2"
         GFORTRAN_URL="https://anaconda.org/conda-forge/libgfortran5/11.3.0/download/osx-arm64/libgfortran5-11.3.0-hdaf2cc0_26.tar.bz2"
 
         sudo conda create -n build $OPENMP_URL $OPENBLAS_URL $GFORTRAN_URL
@@ -32,7 +32,7 @@ if [[ "$RUNNER_OS" == "macOS" ]]; then
     else
         export MACOSX_DEPLOYMENT_TARGET=10.9
         OPENMP_URL="https://anaconda.org/conda-forge/llvm-openmp/11.1.0/download/osx-64/llvm-openmp-11.1.0-hda6cdc1_1.tar.bz2"
-        OPENBLAS_URL="https://anaconda.org/conda-forge/libopenblas/0.3.21/download/osx-64/libopenblas-0.3.21-openmp_h429af6e_3.tar.bz2"
+        OPENBLAS_URL="https://anaconda.org/anaconda/openblas-devel/0.3.21/download/osx-64/openblas-devel-0.3.21-hecd8cb5_0.tar.bz2"
         GFORTRAN_URL="https://anaconda.org/conda-forge/libgfortran5/11.3.0/download/osx-64/libgfortran5-11.3.0-h082f757_26.tar.bz2"
 
         sudo conda create -n build $OPENMP_URL $OPENBLAS_URL $GFORTRAN_URL
