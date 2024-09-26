@@ -299,7 +299,7 @@ class ERM(BaseEstimator, ABC):
             loss = self.loss
 
         if (loss == "multiclass-logistic" or loss == "logistic") and self.lambda_1 == 1.0:
-            self.lambda_1 = 1 / X.shape[0]
+            self.lambda_1 = 0
 
         labels = np.squeeze(labels)
         initial_weight, yf, nclasses = self._initialize_weight(X, labels)
