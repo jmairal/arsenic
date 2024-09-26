@@ -23,7 +23,7 @@ build = "cp*"
 test-skip = "*_arm64 *_universal2:arm64"
 before-all = [
   "source ~/.bashrc",
-  "echo $CONDA",
+  "echo ${CONDA}",
   "conda create -y -n building",  "conda init bash",
   "source /usr/local/miniconda/etc/profile.d/conda.sh",
   "conda activate building",
