@@ -49,7 +49,6 @@ class ERM(BaseEstimator, ABC):
             else:
                 initial_weight = np.squeeze(self.coef_)
 
-
         initial_weight = np.asfortranarray(initial_weight, X.dtype)
 
         if self.warm_start and self.solver in ('auto', 'miso', 'catalyst-miso', 'qning-miso'):
@@ -298,7 +297,7 @@ class ERM(BaseEstimator, ABC):
 
         if loss is None:
             loss = self.loss
-        
+
         if (loss == "multiclass-logistic" or loss == "logistic") and self.lambda_1 == 1.0:
             self.lambda_1 = 1 / len(X)
 
@@ -795,13 +794,13 @@ class Classifier(ClassifierAbstraction):
     (which is optional).
 
     In the case of binary classification:
-    :math:`w` is a p-dimensional vector representing model parameters, 
+    :math:`w` is a p-dimensional vector representing model parameters,
     and b is an optional unregularized intercept. We expect binary labels in {-1,+1}.
 
-    In a multivariate scenario, if you set multi_class parameter to "multinomial" 
-    or if multi_class="auto" and loss="logistic". 
+    In a multivariate scenario, if you set multi_class parameter to "multinomial"
+    or if multi_class="auto" and loss="logistic".
     The loss will automatically be changed to "multiclass-logistic".
-    If you have a multivariate problem and are not in one of the previous configuration, 
+    If you have a multivariate problem and are not in one of the previous configuration,
     a one-vs-all strategy will be used.
 
 
@@ -936,7 +935,7 @@ class Classifier(ClassifierAbstraction):
 
     fista_restart (int): default=50
         Restart strategy for fista (useful for computing regularization path)
-    
+
     multi_class (string): default="auto"
         Determine the comportment of the instance in case of multivariate problem
 
