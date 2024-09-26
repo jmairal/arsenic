@@ -121,11 +121,11 @@ else:
         LIBS = libs
 
         if platform.system() == "Darwin":
-            INCLUDE_DIRS = ['/usr/local/miniconda/envs/build/include', '/usr/local/opt/openblas/include'] + [numpy.get_include()]
+            INCLUDE_DIRS = ['/usr/local/micromamba/include', '/usr/local/opt/openblas/include'] + [numpy.get_include()]
             EXTRA_COMPILE_ARGS = [
             '-DINT_64BITS', '-DAXPBY', '-fPIC',
             '-std=c++11']
-            LIBRARY_DIRS = ['/usr/local/miniconda/envs/build/lib', '/usr/local/opt/openblas/lib'] + LIBRARY_DIRS
+            LIBRARY_DIRS = ['/usr/local/micromamba/lib', '/usr/local/opt/openblas/lib'] + LIBRARY_DIRS
             LIBS = libs
             RUNTIME_LIRABRY_DIRS = LIBRARY_DIRS
             EXTRA_LINK_ARGS = []
