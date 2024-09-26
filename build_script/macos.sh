@@ -41,7 +41,7 @@ if [[ "$RUNNER_OS" == "macOS" ]]; then
     
 
     PREFIX="/usr/local/miniconda/envs/build"
-
+    ls "/usr/local/miniconda/envs/build/lib"
     sudo cp "/usr/local/miniconda/envs/build/lib/libopenblas.0.dylib" "/usr/local/miniconda/envs/build/lib/libopenblas.dylib"
 
 fi
