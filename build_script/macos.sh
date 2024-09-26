@@ -31,7 +31,7 @@ if [[ "$RUNNER_OS" == "macOS" ]]; then
         sudo conda create -n build $OPENMP_URL $OPENBLAS_URL $GFORTRAN_URL $OPENBLAS_DEVEL_URL
         
     else
-        export MACOSX_DEPLOYMENT_TARGET=10.9
+        export MACOSX_DEPLOYMENT_TARGET=11.0
         OPENMP_URL="https://anaconda.org/conda-forge/llvm-openmp/11.1.0/download/osx-64/llvm-openmp-11.1.0-hda6cdc1_1.tar.bz2"
         OPENBLAS_URL="https://anaconda.org/conda-forge/libopenblas/0.3.21/download/osx-64/libopenblas-0.3.21-openmp_h429af6e_3.tar.bz2"
         OPENBLAS_DEVEL_URL="https://anaconda.org/anaconda/openblas-devel/0.3.21/download/osx-64/openblas-devel-0.3.21-hecd8cb5_0.tar.bz2"
