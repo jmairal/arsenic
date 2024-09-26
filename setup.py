@@ -41,9 +41,9 @@ if platform.system() == "Darwin":
     os.environ["CC"] = "/usr/bin/clang"
     os.environ["CXX"] = "/usr/bin/clang++"
     os.environ["CPPFLAGS"] = "-Xpreprocessor -fopenmp"
-    os.environ["CFLAGS"] = "-I/usr/local/miniconda/envs/build/include"
-    os.environ["CXXFLAGS"] = "-I/usr/local/miniconda/envs/build/include"
-    os.environ["LDFLAGS"] = "-Wl,-rpath,/usr/local/miniconda/envs/build/lib -L$/usr/local/miniconda/envs/build/lib -lomp"
+    os.environ["CFLAGS"] = "-I/Users/runner/miniconda3/envs/build/include"
+    os.environ["CXXFLAGS"] = "-I/Users/runner/miniconda3/envs/build/include"
+    os.environ["LDFLAGS"] = "-Wl,-rpath,/Users/runner/miniconda3/envs/build/lib -L$/Users/runner/miniconda3/envs/build/lib -lomp"
 
 np_blas = getBlas()
 
@@ -121,11 +121,11 @@ else:
         LIBS = libs
 
         if platform.system() == "Darwin":
-            INCLUDE_DIRS = ['/usr/local/micromamba/include', '/usr/local/opt/openblas/include'] + [numpy.get_include()]
+            INCLUDE_DIRS = ['/Users/runner/miniconda3/include', '/usr/local/opt/openblas/include'] + [numpy.get_include()]
             EXTRA_COMPILE_ARGS = [
             '-DINT_64BITS', '-DAXPBY', '-fPIC',
             '-std=c++11']
-            LIBRARY_DIRS = ['/usr/local/micromamba/lib', '/usr/local/opt/openblas/lib'] + LIBRARY_DIRS
+            LIBRARY_DIRS = ['/Users/runner/miniconda3/lib', '/usr/local/opt/openblas/lib'] + LIBRARY_DIRS
             LIBS = libs
             RUNTIME_LIRABRY_DIRS = LIBRARY_DIRS
             EXTRA_LINK_ARGS = []
