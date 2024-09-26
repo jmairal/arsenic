@@ -23,7 +23,6 @@ build = "cp*"
 test-skip = "*_arm64 *_universal2:arm64"
 before-all = [
   "conda create -y -n building",  "conda init bash",
-  "source /usr/local/miniconda/etc/profile.d/conda.sh",
   "conda activate building",
   "conda install -y python=3.10",
   "brew install llvm",
