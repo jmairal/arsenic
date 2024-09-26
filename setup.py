@@ -43,7 +43,7 @@ if platform.system() == "Darwin":
     os.environ["CPPFLAGS"] = "-Xpreprocessor -fopenmp"
     os.environ["CFLAGS"] = "-I/Users/runner/miniconda3/envs/build/include"
     os.environ["CXXFLAGS"] = "-I/Users/runner/miniconda3/envs/build/include"
-    os.environ["LDFLAGS"] = "-Wl,-rpath,/Users/runner/miniconda3/envs/build/lib -L$/Users/runner/miniconda3/envs/build/lib -lomp"
+    os.environ["LDFLAGS"] = "-Wl,-rpath,/Users/runner/miniconda3/envs/build/lib -L/Users/runner/miniconda3/envs/build/lib -lomp"
 
 np_blas = getBlas()
 
