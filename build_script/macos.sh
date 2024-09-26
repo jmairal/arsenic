@@ -38,7 +38,7 @@ if [[ "$RUNNER_OS" == "macOS" ]]; then
         sudo conda create -n build $OPENMP_URL $OPENBLAS_URL $GFORTRAN_URL
     fi
 
-    ls "/Users/runner/miniconda3/envs/build/include"
+    ls "/Users/runner/miniconda3/envs/build/lib"
     sudo cp "/Users/runner/miniconda3/envs/build/lib/libopenblas.0.dylib" "/Users/runner/miniconda3/envs/build/lib/libopenblas.dylib"
 
 fi
