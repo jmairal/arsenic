@@ -27,8 +27,9 @@ if [[ "$RUNNER_OS" == "macOS" ]]; then
         OPENBLAS_URL="https://anaconda.org/conda-forge/libopenblas/0.3.21/download/osx-arm64/libopenblas-0.3.21-openmp_hc731615_3.tar.bz2"
         OPENBLAS_DEVEL_URL="https://anaconda.org/anaconda/openblas-devel/0.3.21/download/osx-arm64/openblas-devel-0.3.21-hca03da5_0.tar.bz2"
         GFORTRAN_URL="https://anaconda.org/conda-forge/libgfortran5/11.3.0/download/osx-arm64/libgfortran5-11.3.0-hdaf2cc0_26.tar.bz2"
+        LIBCXX_URL="https://anaconda.org/conda-forge/libcxx/11.0.0/download/osx-arm64/libcxx-11.0.0-h7cf67bf_1.tar.bz2"
 
-        sudo conda create -n build $OPENMP_URL $OPENBLAS_URL $GFORTRAN_URL $OPENBLAS_DEVEL_URL
+        sudo conda create -n build $OPENMP_URL $OPENBLAS_URL $GFORTRAN_URL $OPENBLAS_DEVEL_URL $LIBCXX_URL
         
     else
         export MACOSX_DEPLOYMENT_TARGET=11.0
