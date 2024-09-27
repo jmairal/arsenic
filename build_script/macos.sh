@@ -17,11 +17,12 @@ if [[ "$RUNNER_OS" == "macOS" ]]; then
             # This turns off the computation of the test program in
             # sklearn/_build_utils/pre_build_helpers.py
             export PYTHON_CROSSENV=1
+            echo "ICI"
         fi
         # SciPy requires 12.0 on arm to prevent kernel panics
         # https://github.com/scipy/scipy/issues/14688
         # We use the same deployment target to match SciPy.
-        export MACOSX_DEPLOYMENT_TARGET=11.0
+        export MACOSX_DEPLOYMENT_TARGET=12.0
 
         OPENMP_URL="https://anaconda.org/conda-forge/llvm-openmp/11.1.0/download/osx-arm64/llvm-openmp-11.1.0-hf3c4609_1.tar.bz2"
         OPENBLAS_URL="https://anaconda.org/conda-forge/libopenblas/0.3.21/download/osx-arm64/libopenblas-0.3.21-openmp_hc731615_3.tar.bz2"
