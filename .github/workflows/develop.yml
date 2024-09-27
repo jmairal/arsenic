@@ -59,7 +59,7 @@ jobs:
 
   test_imports:
     needs: [build_wheels]
-    name: Smoke test for c++ depenencies on raw ${{ matrix.os }}
+    name: Smoke test for c++ dependencies on raw ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
