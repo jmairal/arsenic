@@ -259,11 +259,6 @@ class ERM(BaseEstimator, ABC):
         self.n_threads = n_threads
         self.safe = safe
 
-        if (loss == "multiclass-logistic" or loss == "logistic") and self.lambda_1 == -10.0:
-            self.lambda_1 = 0
-        elif (self.lambda_1 == -10.0):
-            self.lambda_1 = 0
-
     def fit(self, X, labels, le_parameter=None):
         """
         Fit the parameters.
@@ -302,6 +297,11 @@ class ERM(BaseEstimator, ABC):
 
         if loss is None:
             loss = self.loss
+
+        if (loss == "multiclass-logistic" or loss == "logistic") and self.lambda_1 == np.inf:
+            self.lambda_1 = 0
+        elif (self.lambda_1 == np.inf):
+            self.lambda_1 = 0
 
         labels = np.squeeze(labels)
         initial_weight, yf, nclasses = self._initialize_weight(X, labels)
@@ -1180,7 +1180,7 @@ class LogisticRegression(Classifier):
     _estimator_type = "classifier"
 
     def __init__(self, penalty='l2', loss='logistic', fit_intercept=True,
-                 verbose=False, lambda_1=-10.0, lambda_2=0, lambda_3=0,
+                 verbose=False, lambda_1=np.inf, lambda_2=0, lambda_3=0,
                  solver='auto', tol=1e-3, duality_gap_interval=10,
                  max_iter=500, limited_memory_qning=20,
                  fista_restart=50, warm_start=False, n_threads=-1,
