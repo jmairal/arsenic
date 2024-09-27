@@ -23,7 +23,7 @@ if [[ "$RUNNER_OS" == "macOS" ]]; then
         # We use the same deployment target to match SciPy.
         export MACOSX_DEPLOYMENT_TARGET=12.0
 
-        OPENMP_URL="https://anaconda.org/conda-forge/llvm-openmp/11.0.0/download/osx-arm64/llvm-openmp-11.0.0-hdb94862_1.tar.bz2"
+        OPENMP_URL="https://anaconda.org/conda-forge/llvm-openmp/11.1.0/download/osx-arm64/llvm-openmp-11.1.0-hf3c4609_1.tar.bz2"
         OPENBLAS_URL="https://anaconda.org/conda-forge/libopenblas/0.3.21/download/osx-arm64/libopenblas-0.3.21-openmp_hc731615_3.tar.bz2"
         OPENBLAS_DEVEL_URL="https://anaconda.org/anaconda/openblas-devel/0.3.21/download/osx-arm64/openblas-devel-0.3.21-hca03da5_0.tar.bz2"
         GFORTRAN_URL="https://anaconda.org/conda-forge/libgfortran5/11.3.0/download/osx-arm64/libgfortran5-11.3.0-hdaf2cc0_26.tar.bz2"
