@@ -49,7 +49,7 @@ jobs:
         run: python -m cibuildwheel --output-dir wheelhouse
 
       - name: To avoid clean up error
-        run: sudo rm -rf "/Users/runner/conda_pkgs_dir/libcxx-11.0.0-h7cf67bf_1"
+        run: sudo rm -rf "/Users/runner/conda_pkgs_dir"
         if: runner.os == 'macOS' && runner.arch == 'ARM64'
           
 
