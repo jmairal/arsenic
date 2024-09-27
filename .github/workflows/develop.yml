@@ -33,11 +33,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v5
         with:
           python-version: 3.8
+        if: runner.os == 'macOS' && runner.arch == 'ARM64'
 
       - uses: conda-incubator/setup-miniconda@v3
+        if: runner.os == 'macOS'
           
       - name: Install cibuildwheel
         run: python -m pip install cibuildwheel==2.19.2
