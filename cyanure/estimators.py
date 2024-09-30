@@ -299,7 +299,7 @@ class ERM(BaseEstimator, ABC):
             loss = self.loss
 
         if (loss == "multiclass-logistic" or loss == "logistic") and self.lambda_1 == np.inf:
-            self.lambda_1 = 1 / (2 * X.shape[0])
+            self.lambda_1 = 0
         elif (self.lambda_1 == np.inf):
             self.lambda_1 = 0
 
