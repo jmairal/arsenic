@@ -287,7 +287,7 @@ class ERM(BaseEstimator, ABC):
 
         if (self.multi_class == "multinomial" or
            (self.multi_class == "auto" and not self._binary_problem)) and self.loss == "logistic":
-            if len(np.unique(labels)) != 2 or self.multi_class == "multinomial":
+            if len(np.unique(labels)) != 2:
                 self._binary_problem = False
 
                 loss = "multiclass-logistic"
